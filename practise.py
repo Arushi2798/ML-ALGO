@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as mt
 
-df=pd.read_csv("Book1.csv")
+df=pd.read_csv("placement.csv")
 
 print(df.head())
 print(df.shape)
