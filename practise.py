@@ -1,3 +1,18 @@
 import numpy as np
-a=np.array([5])
-print(a.ndim)
+import pandas as pd
+import matplotlib.pyplot as mt
+
+df=pd.read_csv("Book1.csv")
+
+print(df.head())
+print(df.shape)
+print(df.size)
+
+print(df.info())
+
+df=df.iloc[:,1:]
+
+
+print(df.head())
+
+mt.scatter(df["CGPA"],df["IQ"])
