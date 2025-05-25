@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import sklearn
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
@@ -26,7 +25,7 @@ def recommend_comics(title, num_recommendations=5):
     sim_scores = list(enumerate(cosine_sim[idx]))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)[1:num_recommendations+1]
     comic_indices = [i[0] for i in sim_scores]
-    return df[['Title', 'Author', 'genre', 'Rating']].iloc[comic_indices].reset_index(drop=True)
+    return df[['Title', 'Author', 'genre', 'Rating','completion_status']].iloc[comic_indices].reset_index(drop=True)
 
 # Streamlit UI
 st.set_page_config(page_title="Comic Recommender", layout="centered")
