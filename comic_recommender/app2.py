@@ -46,4 +46,5 @@ if st.button("Get Recommendations"):
             st.markdown(f"- **Author:** {row['Author']}")
             st.markdown(f"- **Genre:** {row['genre']}")
             st.markdown(f"- **Rating:** {row['Rating']}")
+            st.markdown(f"- **Completion_status:** {row['completion_status']}")
             st.markdown("---")
